@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Intelligence Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7fe; padding: 20px; color: #2b3674; }
+        h1 { text-align: center; margin-bottom: 20px; }
+        .stats { display: flex; gap: 15px; margin-bottom: 20px; }
+        .card { background: white; padding: 15px; border-radius: 8px; flex: 1; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card h3 { font-size: 14px; color: #707eae; margin-bottom: 5px; }
+        .card p { font-size: 24px; font-weight: bold; color: #1b2559; margin: 0; }
+        .chart-box { background: white; padding: 20px; border-radius: 8px; max-width: 700px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+    <h1>Analytics & BI Dashboard</h1>
+    <div class="stats">
+        <div class="card"><h3>Total Revenue</h3><p>$124,500</p></div>
+        <div class="card"><h3>Active Users</h3><p>8,420</p></div>
+        <div class="card"><h3>Conversions</h3><p>1,240</p></div>
+    </div>
+    <div class="chart-box">
+        <canvas id="salesChart"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{ label: 'Revenue ($)', data: [12000, 19000, 15000, 25000, 22000, 30000], borderColor: '#4318FF', fill: false }]
+            }
+        });
+    </script>
+</body>
+</html>
